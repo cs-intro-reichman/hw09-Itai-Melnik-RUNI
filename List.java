@@ -10,7 +10,16 @@
  */
 public class List {
 
-  
+    // public static void main(String[] args) {
+    //     String str = "committed_";
+    //     List list = new List();
+    //     for (int i = 0; i < str.length(); i++) {
+    //         list.update(str.charAt(i));
+    //     }
+
+    //     System.out.println(list.toString());
+    // }
+
     // Points to the first node in this list
     private Node first;
 
@@ -47,19 +56,23 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        //Your code goes here
+        // Your code goes here
+
+        if (size == 0) {
+            return "()";
+        }
+
         Node current = first;
-        StringBuilder str  = new StringBuilder("(");
-        
+        StringBuilder str = new StringBuilder("(");
+
         while (current != null) {
-            str.append(current.toString()) ;
+            str.append(current.toString());
             str.append(" ");
             current = current.next;
         }
-        str.replace(str.length()-1,str.length()-1, ")");
-         
+        str.replace(str.length() - 1, str.length(), ")");
+
         return str.toString();
-        
 
     }
 
@@ -93,11 +106,10 @@ public class List {
      */
     public void update(char chr) {
         // Your code goes here
-        if(indexOf(chr) == -1){
+        if (indexOf(chr) == -1) {
             addFirst(chr);
-        }
-        else{
-           get(indexOf(chr)).count++;
+        } else {
+            get(indexOf(chr)).count++;
         }
     }
 
@@ -114,7 +126,6 @@ public class List {
         Node prev = null;
         Node current = first;
 
-    
         while (current != null && !(current.cp.equals(chr))) {
             prev = current;
             current = current.next;
@@ -140,9 +151,9 @@ public class List {
         Node current = first;
         if (index > size || index < 0)
             throw new IndexOutOfBoundsException("index is out of bounds");
-      
+
         int i = 0;
-        while(i < index && current != null) {
+        while (i < index && current != null) {
             current = current.next;
             i++;
         }
