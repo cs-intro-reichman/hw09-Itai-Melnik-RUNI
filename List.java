@@ -56,11 +56,15 @@ public class List {
     public String toString() {
         // Your code goes here
         Node current = first;
-        StringBuilder str  = new StringBuilder();
+        StringBuilder str  = new StringBuilder("(");
+        
         while (current != null) {
             str.append(current.toString()) ;
+            str.append(" ");
             current = current.next;
         }
+        str.replace(str.length()-1,str.length()-1, ")");
+         
         return str.toString();
     }
 
