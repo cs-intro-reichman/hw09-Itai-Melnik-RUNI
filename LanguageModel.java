@@ -138,7 +138,7 @@ public class LanguageModel {
         String lastWindow = initialText.substring(initialText.length() - windowLength);
         generatedText = lastWindow;
 
-        while (generatedText.length() < textLength) {
+        while (generatedText.length() < textLength + initialText.length()) {
             List listKey = CharDataMap.get(lastWindow);
             if (listKey == null)
                 return generatedText;
