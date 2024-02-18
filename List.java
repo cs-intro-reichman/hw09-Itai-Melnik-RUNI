@@ -10,6 +10,14 @@
  */
 public class List {
 
+    public static void main(String[] args) {
+        String str = "committed_";
+        List list = new List();
+       for (int i = 0; i < str.length(); i++) {
+        list.update(str.charAt(i));
+       }
+        System.out.println(list.toString());
+    }
     // Points to the first node in this list
     private Node first;
 
@@ -48,12 +56,12 @@ public class List {
     public String toString() {
         // Your code goes here
         Node current = first;
-        String str = "";
+        StringBuilder str  = new StringBuilder();
         while (current != null) {
-            str += current.toString();
+            str.append(current.toString()) ;
             current = current.next;
         }
-        return str;
+        return str.toString();
     }
 
     /**
@@ -107,7 +115,8 @@ public class List {
         Node prev = null;
         Node current = first;
 
-        while (current != null && !(current.equals(chr))) {
+    
+        while (current != null && !(current.cp.equals(chr))) {
             prev = current;
             current = current.next;
         }
