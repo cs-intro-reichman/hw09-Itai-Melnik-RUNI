@@ -10,14 +10,7 @@
  */
 public class List {
 
-    public static void main(String[] args) {
-        String str = "committed_";
-        List list = new List();
-       for (int i = 0; i < str.length(); i++) {
-        list.update(str.charAt(i));
-       }
-        System.out.println(list.toString());
-    }
+  
     // Points to the first node in this list
     private Node first;
 
