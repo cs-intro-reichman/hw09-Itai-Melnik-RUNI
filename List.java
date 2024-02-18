@@ -54,7 +54,7 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // Your code goes here
+        //Your code goes here
         Node current = first;
         StringBuilder str  = new StringBuilder("(");
         
@@ -66,6 +66,8 @@ public class List {
         str.replace(str.length()-1,str.length()-1, ")");
          
         return str.toString();
+        
+
     }
 
     /**
